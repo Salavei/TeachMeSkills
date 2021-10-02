@@ -12,7 +12,7 @@ print('В 🪣 на 5л', bucket_5, '- литров воды\nВ 🪣 на 3л',
 print("""
 fill_upbucket_5 - налить в ведро 5, fill_upbucket_3 - налить в ведро  3
 pour_outbucket_5 - вылить из ведра 5, pour_outbucket_3 - вылить из ведра 3
-bucket_5bucket_3 - перелить из ведра 5 в ведро 3, bucket_3bucket_5 - перелить из ведра 4 в ведро 5
+bucket_5bucket_3 - перелить из ведра 5 в ведро 3, bucket_3bucket_5 - перелить из ведра 3 в ведро 5
 quit - выход""")
 while bucket_5 != 4:
     aqua = input(':')
@@ -53,21 +53,33 @@ while bucket_5 != 4:
         else:
             print('error 200')
         trigger += 1
-        print(bucket_3, '3-l', bucket_5, '5-l')
-    elif aqua == 'bucket_3bucket_5' and bucket_5 != 5:
-        if bucket_5 == 4 and bucket_3 >= 1:
+        print(bucket_3, '🪣 3-l', bucket_5, '🪣 5-l')
+    elif aqua == 'bucket_3bucket_5' and bucket_5 < 5:
+        if bucket_5 == 4 and bucket_3 == 1:
             bucket_5 += 1
             bucket_3 -= 1
-        elif bucket_5 == 3 and bucket_3 >= 2:
+        elif bucket_5 == 3 and bucket_3 == 2:
             bucket_5 += 2
             bucket_3 -= 2
-        elif bucket_5 == 2 and bucket_3 >= 3:
+        elif bucket_5 == 3 and bucket_3 == 3:
+            bucket_5 += 2
+            bucket_3 -= 2
+        elif bucket_5 == 2 and bucket_3 == 3:
             bucket_5 += 3
             bucket_3 -= 3
+        elif bucket_5 == 1 and bucket_3 == 3:
+            bucket_5 += 3
+            bucket_3 -= 3
+        elif bucket_5 == 0 and bucket_3 == 3:
+            bucket_5 += 3
+            bucket_3 -= 3
+        elif bucket_5 == 0 and bucket_3 == 1:
+            bucket_5 += 1
+            bucket_3 -= 1
         else:
             print('error 100')
         trigger += 1
-        print(bucket_3, '3-l', bucket_5, '5-l')
+        print(bucket_3, '🪣 3-l', bucket_5, '🪣 5-l')
     else:
         'ошибка ввода'
 print('вы закончили за', trigger, 'попыток')
