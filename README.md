@@ -1,4 +1,2 @@
 # TeachMeSkills
-Learning
-
-Email Validation Homework!!
+Learning process
